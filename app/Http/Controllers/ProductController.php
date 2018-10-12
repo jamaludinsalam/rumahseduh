@@ -6,6 +6,7 @@ use App\Product;
 use App\ProductImage;
 use App\Category;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 
 
@@ -147,7 +148,7 @@ class ProductController extends Controller
     
      public function show($product)
     {
-        $orders=Order::where('id', $product)->get();
+        $orders=Order::where('id', $order)->get();
         $cartItems = Cart::content();
         return view('admin.invoice', compact(['cartItems', 'orders', 'users', 'addresses']));
     
@@ -184,12 +185,19 @@ class ProductController extends Controller
      */
     public function destroy($product)
     {
-        $file = Product::find($product)->images()->get();
-        // $files= $file->images->get();
-        $imagepath = $file->image_path;
-        dd($imagepath);
-        // Product::delete($file);
-
+        // $file = Product::where('id', $product)->get();
+        $file = ProductImage::find($product);
+        $files= $file->image_path;
+        // $imagepath = $file->image_path;
+        // dd($files);
+        // ProductImage::delete($files);
+        if($file){
+            return $file->delete($files);
+        }
+        // if(ProductImage::exists($files)){
+        //     ProductImage::delete($files);
+        // }
+        return "deleted";
         // $files=$product->images();
         //  $imagepath = $files->image_path;
         // Product::delete($imagepath);

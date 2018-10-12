@@ -36,6 +36,8 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/shop', 'HomeController@shop')->name('shop');
 Route::get('shops/{product}', 'HomeController@shops');
+Route::get('/blog', 'HomeController@blog')->name('blog');
+Route::get('blogs/{post}', 'HomeController@blogs')->name('blogs');
 Route::resource('/cart', 'CartController');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function()
@@ -43,6 +45,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function(
     Route::resource('product', 'ProductController');
     Route::resource('category', 'CategoryController');
     Route::resource('order', 'OrderController');
+    Route::resource('post', 'PostController');
     Route::post('product/image-upload/{product}', 'ProductController@uploadImages')->name('upload.images');
     Route::post('product/image-destroy/{product}', 'ProductController@destroyImages')->name('destroy.images');
     Route::get('/menuadmin', 'MenuController@index')->name('menus.index');

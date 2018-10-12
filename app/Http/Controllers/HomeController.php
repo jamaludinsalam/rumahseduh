@@ -8,6 +8,7 @@ use App\Address;
 use App\Product;
 use App\Order;
 use App\User;
+use App\Post;
 Use Alert;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
@@ -145,6 +146,21 @@ class HomeController extends Controller
         Alert::success('Photo Uploaded!', 'Success');
         
         return back();
+    }
+
+    public function blog(Post $post)
+    {
+        $posts = Post::latest()->paginate(2);
+        $cartItems = Cart::content();
+        return view('front.front2.blog', compact(['posts', 'cartItems']));
+    }
+
+    public function blogs($post)
+    {
+        $posts = Post::where('id', $post)->get();
+        $cartItems = Cart::content();
+        // dd($posts);
+        return view('front.front2.blogs', compact(['posts', 'cartItems']));
     }
 
 }

@@ -70,7 +70,7 @@
                             </li>
 
 							<li class="@yield('active_blog')">
-								<a href="#">Blog</a>
+								<a href="{{route('blog')}}">Blog</a>
 							</li>
 
 							<li class="@yield('active_about')">
