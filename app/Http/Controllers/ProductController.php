@@ -6,7 +6,7 @@ use App\Product;
 use App\ProductImage;
 use App\Category;
 use Illuminate\Http\Request;
-use Alert;
+
 
 
 
@@ -78,6 +78,7 @@ class ProductController extends Controller
     
     
     
+    
     public function uploadImages(Product $product , Request $request)
     {
         $products = Product::find($product);
@@ -133,11 +134,23 @@ class ProductController extends Controller
 
         // return "image hass been removed";
     }
+    // public function invoice($order)
+    // {
+    //     $orders=Order::where('id', $order)->get();
+    //     // $users=Order::where('id', $order)->get(['user_id'])->first();
+    //     // // $user=$users->user_id;
+    //     // dd($users);
+    //     // $addresses=Address::where('user_id', $users)->get();
+    //     $cartItems = Cart::content();
+    //     return view('front.front2.invoice', compact(['cartItems', 'orders', 'users', 'addresses']));
+    // }
     
-    
-     public function show(Product $product)
+     public function show($product)
     {
-        //
+        $orders=Order::where('id', $product)->get();
+        $cartItems = Cart::content();
+        return view('admin.invoice', compact(['cartItems', 'orders', 'users', 'addresses']));
+    
     }
 
     /**
@@ -169,12 +182,17 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $product)
+    public function destroy($product)
     {
-        $file = Product::find($product);
-        $files= $file->images();
-        $imagepath = $files->image_path;
-        Product::delete($imagepath);
+        $file = Product::find($product)->images()->get();
+        // $files= $file->images->get();
+        $imagepath = $file->image_path;
+        dd($imagepath);
+        // Product::delete($file);
+
+        // $files=$product->images();
+        //  $imagepath = $files->image_path;
+        // Product::delete($imagepath);
 
 // ===================
 

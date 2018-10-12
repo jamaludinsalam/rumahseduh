@@ -2,20 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Checkout;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use App\Product;
-use App\ProductImage;
-use Alert;
 
-
-use rizalafani\rajaongkirlaravel\app\Provinsi;
-
-use Steevenz\Rajaongkir;
-
-
-
-class CartController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,14 +15,37 @@ class CartController extends Controller
      */
     public function index()
     {
-        $cartItems = Cart::content();
-        $products = Product::all();
-        
-        
-
-        $chunk = $products->take(1);
-        return view('front.front2.cart', compact(['cartItems','chunk', 'products','rajaongkir']));
+        //
     }
+
+    public function address()
+    {
+        $cartItems = Cart::content();
+        return view('front.front2.address', compact('cartItems'));
+    }
+
+    public function order()
+    {
+        $user = Auth::user();
+        $order = $user->orders()->create([
+            'total'     => Cart::total(),
+            'status'    => 0
+        ]);
+
+        $cartItems = Cart::content();
+        foreach ($cartItems as $cartItem)
+        {
+            $order->orderItems()->attach($cartItem->id,[
+                'qty'   => $cartItem->qty,
+                'total'=> $cartItem->qty*$cartItem->price
+            ]);
+            
+        }
+    }
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -40,7 +54,7 @@ class CartController extends Controller
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -57,10 +71,10 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Checkout $checkout)
     {
         //
     }
@@ -68,50 +82,34 @@ class CartController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,$id)
+    public function edit(Checkout $checkout)
     {
-        $products = Product::find($id);
-        
-        $images = $products->images;
-       
-
-        Cart::add($id, $products->name, 1, $products->price,['image' => $images[0]->image_path]);
-
-        
-        Alert::success($products->name,'Added to Cart!', 'Success');
-            return back();
-        
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Checkout $checkout)
     {
-       
-       
-        Cart::update($id,$request->qty);
-
-       return back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Checkout  $checkout
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Checkout $checkout)
     {
-        Cart::remove($id);
-        return back();
+        //
     }
 }

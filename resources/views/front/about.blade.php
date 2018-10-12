@@ -2,6 +2,11 @@
 
 @section('title','About Us')
 
+@section('js')
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+<script src="{{asset('front/front2/js/map-custom.js')}}"></script>
+@endsection
+
 @section('content')
 
 	<!-- Title Page -->
@@ -193,6 +198,10 @@
 				</div>
 			</div>
 		</div>
-    </section>
+	</section>
+	
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="{{asset('front/front2/js/map-custom.js')}}"></script>
     
 @endsection

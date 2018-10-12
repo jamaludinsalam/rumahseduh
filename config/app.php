@@ -168,9 +168,10 @@ return [
         /*
          * Package Service Providers...
          */
-        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         rizalafani\rajaongkirlaravel\RajaOngkirServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -229,9 +230,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'RajaOngkir' => rizalafani\rajaongkirlaravel\RajaOngkirFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

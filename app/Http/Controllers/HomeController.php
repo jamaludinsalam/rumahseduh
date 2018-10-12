@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Menu;
+use App\Address;
 use App\Product;
+use App\Order;
+use App\User;
 Use Alert;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -52,7 +56,7 @@ class HomeController extends Controller
     public function gallery()
     {
         $cartItems = Cart::content();
-        return view('front.gallery', compact('cartItems'));
+        return view('front.front2.gallery', compact('cartItems'));
     }
 
     public function about()
@@ -90,9 +94,57 @@ class HomeController extends Controller
         
     }
 
-    public function invoice()
+    public function invoice($order)
     {
+        $orders=Order::where('id', $order)->get();
+        // $users=Order::where('id', $order)->get(['user_id'])->first();
+        // // $user=$users->user_id;
+        // dd($users);
+        // $addresses=Address::where('user_id', $users)->get();
         $cartItems = Cart::content();
-        return view('front.front2.invoice', compact('cartItems'));
+        return view('front.front2.invoice', compact(['cartItems', 'orders', 'users', 'addresses']));
     }
+
+    public function myorder()
+    {
+        $orders=Order::where('user_id', Auth::id())->get();
+
+        // if($type == 'unpaid'){
+        //     $orders=Order::where('status', '0')->get();
+        // }elseif ($type == 'process'){
+        //     $orders=Order::where('status', '1')->get();
+        // }else {
+        //     $orders=Order::all();
+        // }
+
+        // if($type == 'delivered'){
+        //     $orders = Order::where('status', '2')->get();
+        // }
+        
+        $cartItems = Cart::content();
+        return view('front.front2.myorder', compact(['orders', 'cartItems']));
+    }
+
+    public function updateImages(Request $request, $order)
+    {
+        $orders = Order::find($order);
+
+        $image=$request->file('image');
+        
+        if($image)
+        {
+            $imageName=$image->getClientOriginalName();
+            $image->move('images/transfer/', $imageName);
+
+            $orders->update([
+                'image' => $imageName
+            ]);
+            
+        }
+
+        Alert::success('Photo Uploaded!', 'Success');
+        
+        return back();
+    }
+
 }

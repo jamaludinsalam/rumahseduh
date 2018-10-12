@@ -52,18 +52,13 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="@yield('active_home')">
-								<a href="/">Home</a>
-								
-							</li>
-
+							<li class="@yield('active_home')"><a href="/">Home</a></li>
 							<li class="@yield('active_beverages') @yield('active_foods') ">
 								<a>Menu</a>
 								<ul class="sub-menu">
-										<li class="@yield('active_beverages')"><a href="{{route('beverages')}}">Beverages</a></li>
-										<li class="@yield('active_foods')"><a href="{{route('foods')}}">Foods</a></li>
-										
-									</ul>
+									<li class="@yield('active_beverages')"><a href="{{route('beverages')}}">Beverages</a></li>
+									<li class="@yield('active_foods')"><a href="{{route('foods')}}">Foods</a></li>
+								</ul>
 							</li>
 
 							<li class="label1 @yield('active_shop')" data-label1="hot">
@@ -80,10 +75,6 @@
 
 							<li class="@yield('active_about')">
 								<a href="{{route('about')}}">About</a>
-							</li>
-
-							<li class="@yield('active_contact')">
-								<a href="{{route('contact')}}">Contact</a>
 							</li>
 						</ul>
 					</div>	
@@ -116,7 +107,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="{{route('home')}}"><img src="{{asset('front/front2/images/icons/coffee-logo.png')}}" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -128,8 +119,8 @@
 				</div>
 
 				<div class="flex-c-m h-full p-lr-10 bor5">
-					<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="2">
-						<i class="zmdi zmdi-shopping-cart"></i>
+					<div class="icon-header-item cl5 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="{{Cart::count()}}">
+						<i  class="zmdi zmdi-shopping-cart"></i>
 					</div>
 				</div>
 			</div>
@@ -146,36 +137,30 @@
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
 			<ul class="main-menu-m">
-				<li>
-					<a href="index.html">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="index.html">Homepage 1</a></li>
-						<li><a href="home-02.html">Homepage 2</a></li>
-						<li><a href="home-03.html">Homepage 3</a></li>
+				<li class="@yield('active_home')"><a href="/">Home</a></li>
+
+				<li class="@yield('active_beverages') @yield('active_foods') ">
+					<a>Menu</a>
+					<ul class="sub-menu">
+						<li class="@yield('active_beverages')"><a href="{{route('beverages')}}">Beverages</a></li>
+						<li class="@yield('active_foods')"><a href="{{route('foods')}}">Foods</a></li>
 					</ul>
-					<span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
 				</li>
 
-				<li>
-					<a href="product.html">Shop</a>
+				<li class="label1 @yield('active_shop')" data-label1="hot">
+					<a href="{{route('shop')}}">Shop</a>
 				</li>
 
-				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+				<li class="@yield('active_gallery')">
+					<a href="{{route('gallery')}}">Gallery</a>
 				</li>
 
-				<li>
-					<a href="blog.html">Blog</a>
+				<li class="@yield('active_blog')">
+					<a href="#">Blog</a>
 				</li>
 
-				<li>
-					<a href="about.html">About</a>
-				</li>
-
-				<li>
-					<a href="contact.html">Contact</a>
+				<li class="@yield('active_about')">
+					<a href="{{route('about')}}">About</a>
 				</li>
 			</ul>
 		</div>
@@ -208,68 +193,160 @@
 				</div>
 			</div>
 
-			<div style="center" class="sidebar-content flex-w w-full p-lr-65 js-pscroll">
+			<div style="" class="sidebar-content flex-w w-full p-lr-65 js-pscroll">
+				<li class="t-center">
+					<ul>
+						@if (Auth::check() && Auth::user()->admin == 1)
+						<li class="dropdown">
+							<a href="#" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+								{{ Auth::user()->name }}
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="{{ route('logout') }}" class="flex-c-m stext-101 cl0 size-101 bg2 bor1 hov-btn1 p-lr-15 trans-04 "
+										onclick="event.preventDefault();
+										document.getElementById('logout-form').submit();"><button type="submit">
+										Logout</button>
+									</a>
+	
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" >
+										{{ csrf_field() }}
+									</form>
+								</li>
+							</ul>
+						</li>
+						<br>
+						<br>
+						<ul class="sidebar-link w-full">
+							<li class="p-b-13">
+								<a href="index.html" class="stext-102 cl5 hov-cl1 trans-04">
+									Dashboard
+								</a>
+							</li>
 				
+							<li class="p-b-13">
+								<a href="{{route('product.index')}}" class="stext-102 cl5 hov-cl1 trans-04">
+									Product
+								</a>
+							</li>
+				
+							<li class="p-b-13">
+								<a href="{{route('orders.index')}}" class="stext-102 cl5 hov-cl1 trans-04">
+									Orders
+								</a>
+							</li>
+							<li class="p-b-13">
+								<a href="{{route('menus.index')}}" class="stext-102 cl5 hov-cl1 trans-04">
+									Menu
+								</a>
+							</li>
+						</ul>
+						
+						@elseif(Auth::check() && Auth::user()->admin == 0)
+						<li class="dropdown">
+							<a href="#" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+								{{ Auth::user()->name }}
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="{{ route('logout') }}" class="flex-c-m stext-101 cl0 size-101 bg2 bor1 hov-btn1 p-lr-15 trans-04 "
+										onclick="event.preventDefault();
+										document.getElementById('logout-form').submit();"><button type="submit">
+										Logout</button>
+									</a>
+	
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" >
+										{{ csrf_field() }}
+									</form>
+								</li>
+							</ul>
+						</li>
+							<br>
+							<br>
+						<ul class="sidebar-link w-full">
+							<li class="p-b-13">
+								<a href="index.html" class="stext-102 cl5 hov-cl1 trans-04">
+									Home
+								</a>
+							</li>
+				
+							<li class="p-b-13">
+								<a href="{{route('myorder')}}" class="stext-102 cl5 hov-cl1 trans-04">
+									My Order
+								</a>
+							</li>
+				
+							<li class="p-b-13">
+								<a href="#" class="stext-102 cl5 hov-cl1 trans-04">
+									My Account
+								</a>
+							</li>
+						</ul>
+
+						@else
+						<a href="{{ route('login') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Login</a>
+                            <br>
+                        <a href="{{ route('register') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Register</a>
+						
+						@endif
+
+					</ul>
+				</li>
                 
-                <li class="t-center">
-                        <!-- Button3 -->
-                        <a href="">
-                            <ul>
-                                <!-- Authentication Links -->
-                                @guest
-                                    <a href="{{ route('login') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Login</a>
-                                        <br>
-                                        
-                                    <a href="{{ route('register') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Register</a>
+                {{-- <li class="t-center">
+                    <!-- Button3 -->
+                    <a href="">
+                        <ul>
+                            <!-- Authentication Links -->
+                            @guest
+                            <a href="{{ route('login') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Login</a>
+                             	<br>
+                            <a href="{{ route('register') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Register</a>
         
-                                @else
-                                <li class="dropdown">
-                                    <a href="#" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                            {{ Auth::user()->name }}
+                            @else
+                            <li class="dropdown">
+                                <a href="#" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}" class="flex-c-m stext-101 cl0 size-101 bg2 bor1 hov-btn1 p-lr-15 trans-04 "
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();"><button type="submit">
+                                            Logout</button>
+                                        </a>
+        
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                                <br>
+                                <br>
+                            <ul class="sidebar-link w-full">
+                                <li class="p-b-13">
+                                    <a href="index.html" class="stext-102 cl5 hov-cl1 trans-04">
+                                        Home
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                Logout
-                                            </a>
-        
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                                {{ csrf_field() }}
-                                            </form>
-                                        </li>
-                                    </ul>
                                 </li>
-                                <br>
-                                <br>
-                                <ul class="sidebar-link w-full">
-                                        <li class="p-b-13">
-                                            <a href="index.html" class="stext-102 cl2 hov-cl1 trans-04">
-                                                Home
-                                            </a>
-                                        </li>
                     
-                                        <li class="p-b-13">
-                                            <a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-                                                My Order
-                                            </a>
-                                        </li>
+                                <li class="p-b-13">
+                                    <a href="#" class="stext-102 cl5 hov-cl1 trans-04">
+                                        My Order
+                                    </a>
+                                </li>
                     
-                                        <li class="p-b-13">
-                                            <a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-                                                My Account
-                                            </a>
-                                        </li>
-
-                                    </ul>
-
-
-
-                                @endguest
-                            </ul>
-                        </a>
-                    </li>
+                                <li class="p-b-13">
+                                	<a href="#" class="stext-102 cl5 hov-cl1 trans-04">
+                                        My Account
+                                    </a>
+                                </li>
+							</ul>
+							@endguest
+                        </ul>
+                    </a>
+                </li> --}}
 
 				
 				<div class="sidebar-gallery w-full">
@@ -315,7 +392,7 @@
 							</a>
 
 							<span class="header-cart-item-info">
-									{{$cartItem->qty}} x {{$cartItem->price}}
+							{{$cartItem->qty}} x @money($cartItem->price)
 							</span>
 						</div>
 					</li>
@@ -325,7 +402,7 @@
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total: {{Cart::subtotal()}}
+						Total:<hr>Rp. {{Cart::subtotal()}}
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
@@ -497,7 +574,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!--===============================================================================================-->
 	<script src="{{asset('front/front2/vendor/isotope/isotope.pkgd.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/sweetalert/sweetalert.min.js')}}"></script>
+	{{-- <script src="{{asset('front/front2/vendor/sweetalert/sweetalert.min.js')}}"></script>
 	<script>
 		$('.js-addwish-b2').on('click', function(e){
 			e.preventDefault();
@@ -539,7 +616,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				swal(nameProduct, "is added to cart !", "success");
 			});
 		});
-	</script>
+	</script> --}}
 <!--===============================================================================================-->
 	<script src="{{asset('front/front2/vendor/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 	<script>
@@ -559,10 +636,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 	<script src="{{asset('front/front2/js/main.js')}}"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-	<script src="{{asset('front/front2/js/map-custom.js')}}"></script>
-	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+	@yield('js')
 	
+	<script src="{{asset('admin/sweetalert/sweetalert.min.js')}}"></script>
+	@include('sweet::alert')	
 
 
 </body>

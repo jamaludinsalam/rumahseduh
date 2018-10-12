@@ -21,7 +21,7 @@
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
         <link rel="stylesheet" href="{{asset('admin/dropzone/dropzone.css')}}">
         
-        <link rel="stylesheet" href="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.min.css">
+        
         
         
     </head>
@@ -64,8 +64,8 @@
   <!-- Custom js for this page-->
   <script src="{{asset('admin/js/dashboard.js')}}"></script>
   <!-- End custom js for this page-->
-  <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.min.js"></script>
-  @include('sweetalert::alert')
+  <script src="{{asset('admin/sweetalert/sweetalert.min.js')}}"></script>
+  @include('sweet::alert')
   
 </body>
 </html>

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Address;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
+use App\Order;
+use App\User;
+
 
 class AddressController extends Controller
 {
@@ -14,7 +19,8 @@ class AddressController extends Controller
      */
     public function index()
     {
-        //
+        $cartItems = Cart::content();
+        return view('front.front2.address', compact('cartItems'));
     }
 
     /**
@@ -35,7 +41,24 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request,[
+            'addressline'   => 'required',
+            'city'          => 'required',
+            'province'      => 'required',
+            'postcode'      => 'required|integer',
+            'phone'         => 'required|integer'
+
+        ]);
+        Auth::user()->address()->create($request->all());
+        //Create The Order
+        Order::createOrder();
+
+        
+        
+        
+        return redirect()->route('invoice');
+        
     }
 
     /**

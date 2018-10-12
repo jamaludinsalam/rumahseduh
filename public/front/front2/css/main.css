@@ -213,6 +213,135 @@ div.negMoney::before {
 div.negMoney::after {
   content:')';
 }
+/*//////////////////////////////////////////////////////////////////
+[GALLERY CUSTOM]*/
+.item-gallery-sidebar {
+  display: block;
+  position: relative;
+  width: calc((100% - 30px) / 3 );
+  margin: 5px;
+}
+
+.item-gallery-sidebar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.item-gallery-sidebar:hover:after {
+  background-color: rgba(236,29,37,0.7);
+}
+
+@media (max-width: 576px) {
+  .wrap_header {
+    height: 80px;
+  }
+
+  .gallery-sidebar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.label-gallery {
+  border-radius: 10px;
+  padding: 2px 11px;
+  margin: 5px 0;
+}
+
+.label-gallery:hover {
+  background-color: #111111;
+  color: white;
+}
+
+.is-actived {
+  background-color: #111111;
+  color: white;
+}
+
+/* ------------------------------------ */
+.wrap-gallery {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.item-gallery {
+  width: calc( (100% - 140px) / 3 ) ;
+  margin: 30px 15px;
+  position: relative;
+}
+
+.overlay-item-gallery {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(236,29,37,0.8);
+  opacity: 0;
+}
+
+.overlay-item-gallery:hover {
+  opacity: 1;
+}
+
+.btn-show-gallery {
+  font-size: 18px;
+  color: #222222;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .item-gallery {
+    width: calc((100% - 110px) / 2);
+  }
+}
+
+@media (max-width: 576px) {
+  .item-gallery {
+    width: calc((100% - 30px) / 1);
+  }
+  .wrap-gallery {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/*[ Hover img zoom]
+-----------------------------------------------------------
+*/
+.hov-img-zoom {
+	display: block;
+	overflow: hidden;
+}
+.hov-img-zoom img{
+	width: 100%;
+	-webkit-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    transition: all 0.6s;
+}
+.hov-img-zoom:hover img {
+	-webkit-transform: scale(1.1);
+  	-moz-transform: scale(1.1);
+  	-ms-transform: scale(1.1);
+  	-o-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -2027,11 +2156,13 @@ input.num-product::-webkit-inner-spin-button {
 .table-shopping-cart .column-2 {
   width: 220px;
   font-size: 15px;
+  padding-left: 5px;
 }
 
 .table-shopping-cart .column-3 {
   width: 120px;
   font-size: 16px;
+  text-align: center;
 }
 
 .table-shopping-cart .column-4 {
@@ -2041,9 +2172,14 @@ input.num-product::-webkit-inner-spin-button {
 
 .table-shopping-cart .column-5 {
   width: 172px;
-  padding-right: 50px;
-  text-align: right;
+  
+  text-align: center;
   font-size: 16px;
+}
+.table-shopping-cart .column-6 {
+  width: 100px;
+  text-align: center;
+  padding-right: 25px;
 }
 
 .table-shopping-cart .table_row {
@@ -2236,6 +2372,12 @@ input.num-product::-webkit-inner-spin-button {
 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
+.stext-1000 {
+  font-family: Poppins-Medium;
+  font-size: 12px;
+  line-height: 1.266667;
+  text-transform: uppercase;
+}
 .stext-101 {
   font-family: Poppins-Medium;
   font-size: 15px;
@@ -2514,7 +2656,10 @@ input.num-product::-webkit-inner-spin-button {
 /*==================================================================
     SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE SIZE 
 ==================================================================*/
-
+.size-1000 {
+  min-width: 80px;
+  height: 30px;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ Size ]*/
@@ -2747,6 +2892,7 @@ input.num-product::-webkit-inner-spin-button {
 .bg7 {background-color: #333;}
 .bg8 {background-color: #f3f3f3;}
 .bg9 {background-color: rgba(255,255,255,0.9);}
+.bg1000 {background-color: #f3f3f3;}
 
 /*---------------------------------------------*/
 .bg-overlay1::before {
@@ -3060,7 +3206,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .how-itemcart1 img {
-  width: 100%;
+  width: 80%;
 }
 
 .how-itemcart1::after {
@@ -3202,6 +3348,18 @@ input.num-product::-webkit-inner-spin-button {
 .hov-btn3:hover i {
   color: #fff;
 }
+
+/*---------------------------------------------*/
+.hov-btn1000:hover {
+  border-color: #d63333;
+  background-color: #d63333;
+  color: #fff;
+}
+
+.hov-btn1000:hover i {
+  color: #fff;
+}
+
 
 /*---------------------------------------------*/
 .hov-tag1:hover {
