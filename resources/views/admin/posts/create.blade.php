@@ -1,4 +1,7 @@
 @extends('admin.layouts.main')
+@section('tinymce')
+    @include('admin.layouts.partials.tinymce')
+@endsection
 
 @section('content')
 
@@ -15,27 +18,15 @@
                         <input name="title" type="text" class="form-control"  placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <label name="category_id" >Category</label>
-                        <select name="category_id"  class="form-control">
+                        <label hidden name="category_id" >Category</label>
+                        <select hidden name="category_id"  class="form-control">
                             <option name="category_id" value="1">1</option>
                             <option name="category_id" value="1">2</option>
                         </select>
                     </div>
-                    
-                    {{-- <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" name="image" disabled class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info"  placeholder="Upload Image">
-                        <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-info" type="button">Upload</button>
-                        </span>
-                        </div>
-                    </div> --}}
-                    
-                    <div class="form-group">
+                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea name="content" class="form-control"  rows="4"></textarea>
+                        <textarea name="content" id="textarea" class="form-control"   rows="7"></textarea>
                     </div>
                     <div class="form-group">
                        <label for="image">Image </label> 

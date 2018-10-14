@@ -7,9 +7,9 @@
     <div class="col-lg-4 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 >Add Category Menu</h4>
+                <h4 >Add Menu</h4>
                 <br>
-                <button class="btn btn-success btn-fw" data-toggle="modal" data-target="#exampleModal">New Category Menu
+                <button class="btn btn-success btn-fw" data-toggle="modal" data-target="#exampleModal">New Menu
                         <i class="mdi mdi-plus"></i>
                 </button>
                 <!-- Modal -->

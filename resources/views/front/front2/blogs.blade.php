@@ -43,8 +43,8 @@
                             {{$post->title}}
                         </h4>
 
-                        <p class="stext-117 cl6 p-b-26">
-                            {{$post->content}}
+                        <p class="stext-117 cl6 p-b-26" >
+                            {!! $post->content !!}
                         </p>
 
                         
@@ -78,9 +78,9 @@
                                             {{$post->title}}
                                         </a>
 
-                                        <span class="stext-116 cl6 p-t-20">
-                                            {{ str_limit($post->content, 50, '.....')}}
-                                        </span>
+                                        {{-- <span class="stext-116 cl6 p-t-20">
+                                            {!! str_limit($post->content, 50, '.....')!!}
+                                        </span> --}}
                                     </div>
                                 </li>
 

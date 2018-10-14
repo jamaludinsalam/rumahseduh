@@ -20,6 +20,8 @@
         <script src="{{asset('admin/vendors/js/vendor.bundle.base.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
         <link rel="stylesheet" href="{{asset('admin/dropzone/dropzone.css')}}">
+        @yield('tinymce')
+       
         
         
         

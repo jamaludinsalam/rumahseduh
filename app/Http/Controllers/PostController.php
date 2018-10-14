@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+Use Alert;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::latest()->paginate(50);
+        return view('admin.posts.index', compact(['posts']));
     }
 
     /**
@@ -55,7 +58,8 @@ class PostController extends Controller
        }
        Post::create($formInput);
         
-       Return "Uploaded";
+       Alert::success('Post Published!', 'Success');
+       return redirect()->route('post.index');    
         
         
         
@@ -68,6 +72,8 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
+    
+
     public function show(Post $post)
     {
         //
@@ -79,9 +85,12 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($post)
     {
-        //
+        
+        $posts = Post::find($post);
+
+        return view('admin.posts.edit', compact('posts'));
     }
 
     /**
@@ -93,7 +102,35 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $formInput = $request->except('image');
+        
+        $this->validate($request,[
+            'title'         => 'required',
+            'category_id'   => 'required',
+            'content'       => 'required',
+            'image'         => 'image|mimes:png,jpg,jpeg|max:10000',
+        ]);
+
+
+        $image = $request->image;
+        
+        if($image)
+        {
+            $filename = $image->getClientOriginalName();
+            $image->move('images/post', $filename);
+            $formInput['image'] = $filename;
+            
+        }
+        $post->update($formInput,[
+            'title'         => request('title'),
+            'category_id'   => request('category_id'),
+            'content'       => request('content'),
+            
+        ]);
+        Alert::success('Post Edited!', 'Success');
+        return redirect()->route('post.index');    
+        
+        
     }
 
     /**
@@ -104,6 +141,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        Alert::success('Post Deleted!', 'Success');
+        return redirect()->route('post.index');
     }
 }

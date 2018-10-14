@@ -43,7 +43,8 @@
                                             <div class="item-slick3" data-thumb="{{asset('images/transfer')}}/{{$order->image}}">
                                             <div class="wrap-pic-w pos-relative">
                                                 <img style="width:100px; height:100px" src="{{asset('images/transfer')}}/{{$order->image}}" alt="IMG-PRODUCT">
-                                                    <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{asset('images/transfer')}}/{{$order->image}}">
+                                                    <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{asset('images/transfer')}}/{{$order->image}}" 
+                                                    data-lightbox="gallery" style="background-image: url('{{asset('images/transfer')}}/{{$order->image}}')">
                                                         <i class="fa fa-expand"></i>
                                                     </a>
                                             </div>

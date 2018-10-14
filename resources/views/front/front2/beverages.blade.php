@@ -38,7 +38,7 @@
 
                                 <div class="price-item-mainmenu txt22 ">
                                     {{-- @money($coffee->price) --}}
-                                    {{number_format($coffee->price,2,',', '.')}}
+                                    @money($coffee->price)
                                 </div>
                             </div>
 

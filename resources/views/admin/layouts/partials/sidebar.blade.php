@@ -18,29 +18,24 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{route('dashboard')}}">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          {{-- <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="menu-icon mdi mdi-content-copy"></i>
-              <span class="menu-title">Basic UI Elements</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
-                </li>
-              </ul>
-            </div>
-          </li> --}}
           <li class="nav-item">
+            <a class="nav-link" href="{{route('post.index')}}">
+              <i class="menu-icon mdi mdi-library-books"></i>
+              <span class="menu-title">Post Article</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('product.index')}}">
+              <i class="menu-icon mdi mdi-wallet-travel"></i>
+              <span class="menu-title">Products</span>
+            </a>
+          </li>
+          {{-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic2" >
               <i class="menu-icon mdi mdi-wallet-travel"></i>
               <span class="menu-title">Products</span>
@@ -56,7 +51,7 @@
                     </li>
                 </ul>
               </div>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="{{url('admin/orders')}}">
               <i class="menu-icon mdi mdi-chart-line"></i>
@@ -64,6 +59,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('menus.index')}}">
+              <i class="menu-icon mdi mdi-table"></i>
+              <span class="menu-title">Menus</span>
+            </a>
+          </li>
+          {{-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic">
               <i class="menu-icon mdi mdi-table"></i>
               <span class="menu-title">Menus</span>
@@ -79,9 +80,9 @@
                     </li>
                 </ul>
               </div>
-          </li>
+          </li> --}}
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/font-awesome.html">
+            <a class="nav-link" href="{{route('gallery.index')}}">
               <i class="menu-icon mdi mdi-image-multiple"></i>
               <span class="menu-title">Galleries</span>
             </a>

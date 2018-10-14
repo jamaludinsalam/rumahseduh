@@ -31,27 +31,32 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/beverages', 'HomeController@beverages')->name('beverages');
 Route::get('/foods', 'HomeController@foods')->name('foods');
-Route::get('/gallery', 'HomeController@gallery')->name('gallery');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/gallery', 'HomeController@gallery')->name('gallery');
+Route::get('/gallery/{gallery}', 'HomeController@gallerys')->name('gallerys');
 Route::get('/shop', 'HomeController@shop')->name('shop');
-Route::get('shops/{product}', 'HomeController@shops');
+Route::get('shops/{product}', 'HomeController@shops')->name('shops');
 Route::get('/blog', 'HomeController@blog')->name('blog');
 Route::get('blogs/{post}', 'HomeController@blogs')->name('blogs');
 Route::resource('/cart', 'CartController');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function()
 {
     Route::resource('product', 'ProductController');
     Route::resource('category', 'CategoryController');
+    Route::resource('gallery', 'GalleryController');
     Route::resource('order', 'OrderController');
     Route::resource('post', 'PostController');
+    Route::get('dashboard', 'AdminController@index')->name('dashboard');
     Route::post('product/image-upload/{product}', 'ProductController@uploadImages')->name('upload.images');
     Route::post('product/image-destroy/{product}', 'ProductController@destroyImages')->name('destroy.images');
     Route::get('/menuadmin', 'MenuController@index')->name('menus.index');
     Route::view('/galleries', 'admin.galleries');
-
+    Route::get('product/image-upload/{product}','ProductController@upload')->name('product.upload');
     Route::get('orders/{type?}', 'OrderController@Orders')->name('orders.index');
+    Route::delete('product/delete/{product}', 'ProductController@delete')->name('product.delete');
  
 });
 

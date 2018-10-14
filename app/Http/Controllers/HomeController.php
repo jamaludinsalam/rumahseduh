@@ -9,6 +9,7 @@ use App\Product;
 use App\Order;
 use App\User;
 use App\Post;
+use App\Gallery;
 Use Alert;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
@@ -30,7 +31,8 @@ class HomeController extends Controller
     public function index()
     {
         $cartItems = Cart::content();
-        return view('front.front2.home', compact('cartItems'));
+        $posts = Post::all();
+        return view('front.front2.home', compact(['cartItems', 'posts']));
     }
 
     public function beverages()
@@ -56,8 +58,16 @@ class HomeController extends Controller
 
     public function gallery()
     {
+        $galleries = Gallery::all();
         $cartItems = Cart::content();
-        return view('front.front2.gallery', compact('cartItems'));
+        return view('front.front2.gallery', compact(['cartItems', 'galleries']));
+    }
+
+    public function gallerys($gallery)
+    {
+        $galleries = Gallery::find($gallery);
+        $cartItems = Cart::content();
+        return view('front.front2.gallery', compact(['cartItems', 'galleries']));
     }
 
     public function about()
@@ -150,9 +160,10 @@ class HomeController extends Controller
 
     public function blog(Post $post)
     {
-        $posts = Post::latest()->paginate(2);
+        $posts = Post::latest()->paginate(20);
+        $postside = Post::latest()->paginate(5);
         $cartItems = Cart::content();
-        return view('front.front2.blog', compact(['posts', 'cartItems']));
+        return view('front.front2.blog', compact(['posts', 'cartItems', 'postside']));
     }
 
     public function blogs($post)

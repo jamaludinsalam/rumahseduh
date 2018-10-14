@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\ProductImage;
 use App\Category;
+Use Alert;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Return_;
 
@@ -25,7 +26,7 @@ class ProductController extends Controller
         $images = ProductImage::where('product_id');
        
         
-        return view('admin.product', compact(['products', 'categories']));
+        return view('admin.products.index', compact(['products', 'categories']));
     }
 
     /**
@@ -35,7 +36,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+        $categories = Category::whereIn('id', [1,2,3,4,5])->get();
+
+        return view('admin.products.create', compact(['products', 'categories']));
     }
 
     /**
@@ -63,7 +67,7 @@ class ProductController extends Controller
 
         if($post){
             alert()->success('Post Created', 'Successfully');
-            return redirect('/admin/product');
+            return redirect()->route('product.index');
         }
 
         
@@ -198,57 +202,13 @@ class ProductController extends Controller
         //     ProductImage::delete($files);
         // }
         return "deleted";
-        // $files=$product->images();
-        //  $imagepath = $files->image_path;
-        // Product::delete($imagepath);
-
-// ===================
-
-        //  $file = Product::find($product);
-        //  $files= $file->images;
-        //  $imagepath = $files->image_path;
-    
-         
-        // if(empty($imagepath)){
-        //     return response::json(['message' => 'Sory File does not exist'], 400);
-        // }
-        // $file_path = ("$imagepath");
-        // if(file_exists($file_path)){
-        //     unlink($file_path);
-        // }
-        // if(!empty($imagepath)){
-        //     $imagepath->delete();
-        // }
-
-        // return Response::json(['message' => 'File successfully delete'], 200);
-        // return "image hass been removed";
-
-       
-//  ==========================
-
-
-
-        // if (empty($uploaded_image)) {
-        //     return Response::json(['message' => 'Sorry file does not exist'], 400);
-        // }
- 
-        // $file_path = ("$uploaded_image");
         
-        // if (file_exists($file_path)) {
-        //     unlink($file_path);
-        // }
- 
-        // if (file_exists($resized_file)) {
-        //     unlink($resized_file);
-        // }
- 
-        // if (!empty($uploaded_image)) {
-        //     $uploaded_image->delete();
-        // }
- 
-        // return Response::json(['message' => 'File successfully delete'], 200);
-        
+    }
 
-        // return "image hass been removed";
+    public function delete(Product $product)
+    {
+        $product->delete();
+        Alert::success('Product Deleted!', 'Success');
+        return redirect()->route('product.index');
     }
 }
