@@ -81,11 +81,11 @@
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m h-full">
-						<div class="flex-c-m h-full p-r-24">
+						{{-- <div class="flex-c-m h-full p-r-24">
 							<div class="icon-header-item cl5 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
 								<i class="zmdi zmdi-search"></i>
 							</div>
-						</div>
+						</div> --}}
 							
 						<div class="flex-c-m h-full p-l-18 p-r-25 bor5">
 							<div class="icon-header-item cl5 hov-cl1 trans-04 p-lr-11 icon-header-noti " data-notify="{{Cart::count()}}">
@@ -113,11 +113,11 @@
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m h-full m-r-15">
-				<div class="flex-c-m h-full p-r-10">
+				{{-- <div class="flex-c-m h-full p-r-10">
 					<div class="icon-header-item cl2 hov-cl1 trans-04 p-lr-11 js-show-modal-search">
 						<i class="zmdi zmdi-search"></i>
 					</div>
-				</div>
+				</div> --}}
 
 				<div class="flex-c-m h-full p-lr-10 bor5">
 					<div class="icon-header-item cl5 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="{{Cart::count()}}">
