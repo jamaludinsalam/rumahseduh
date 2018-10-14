@@ -1,4 +1,5 @@
 @extends('admin.layouts.main')
+@section('title', 'Create Post')
 @section('tinymce')
     @include('admin.layouts.partials.tinymce')
 @endsection

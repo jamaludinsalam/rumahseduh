@@ -1,5 +1,5 @@
 @extends('layouts.layout2')
-
+@section('active_gallery', 'active-menu')
 @section('content')
 
 {{-- <div class="header-lunch parallax0 parallax100" style="background-image: url(&quot;front/front2/images/parallax1.jpg&quot;); background-position: center -20.3333px;">

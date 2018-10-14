@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-
+@section('title', 'Products')
 @include('sweetalert::alert')
 
 @section('content')
@@ -102,7 +102,7 @@
               word-wrap: break-word;
               white-space: pre-wrap; 
               white-space: -moz-pre-wrap; 
-              white-space: -pre-wrap; width:300px">{!! str_limit($product->description, 200, '.....') !!}</td>
+              white-space: -pre-wrap; width:300px">{!! str_limit($product->description, 600, '.....') !!}</td>
               <td style="width:40px"> 
                 
                 <div class="row">

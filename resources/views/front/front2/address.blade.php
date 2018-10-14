@@ -1,11 +1,16 @@
 @extends('layouts.layout2')
 
 @section('content')
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('../front/front2/images/bg-02.jpg');">
+    <h2 class="ltext-105 cl0 txt-center">
+       Shipping Info
+    </h2>
+</section>	
+<section class="sec-blog bg0 p-t-60 p-b-90">
+        <div class="container">
 
-<div class="row">
-    <div class="container">
-        <div class="small-6 small-centered columns">
-            <h3>Shipping Info</h3>
+        <div class="col-md-12 col-md-offset-6">
+            <h3></h3>
             
                 
             <form action="{{route('address.store')}}" method="POST" >
@@ -24,11 +29,11 @@
                 </div>
                
                 
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn btn-info btn-fw">Submit</button>
                 
             </form>
         </div>
     </div>
-</div>
+</section>
 
 @endsection

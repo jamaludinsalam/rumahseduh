@@ -60,7 +60,7 @@
                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Keep me signed in
                             </label>
                         </div>
-                        <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
+                        <a href="{{ route('password.request') }}" class="text-small forgot-password text-black">Forgot Password</a>
                     </div>
                    
                     <div class="text-block text-center my-3">

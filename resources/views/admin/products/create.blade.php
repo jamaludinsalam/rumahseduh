@@ -1,4 +1,5 @@
 @extends('admin.layouts.main')
+@section('title', 'Create Products')
 @section('tinymce')
     @include('admin.layouts.partials.tinymce')
 @endsection

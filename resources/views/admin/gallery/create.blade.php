@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-
+@section('title', 'Create New Gallery')
 
 @section('content')
 

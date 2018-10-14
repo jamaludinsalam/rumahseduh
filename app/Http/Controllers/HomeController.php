@@ -168,9 +168,11 @@ class HomeController extends Controller
     public function blogs($post)
     {
         $posts = Post::where('id', $post)->get();
+        $postss = Post::latest()->paginate(4);
+       
         $cartItems = Cart::content();
         // dd($posts);
-        return view('front.front2.blogs', compact(['posts', 'cartItems']));
+        return view('front.front2.blogs', compact(['posts', 'cartItems', 'postss']));
     }
 
 }

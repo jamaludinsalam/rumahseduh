@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-
+@section('title', 'Posts')
 @section('content')
 
 <div class="row">
@@ -56,11 +56,8 @@
                                 word-wrap: break-word;
                                 white-space: pre-wrap; 
                                 white-space: -moz-pre-wrap; 
-                                white-space: -pre-wrap;width:300px ">{!! str_limit($post->content, 250, '.....') !!}</td>
-                                <td>
-                                    {{-- {{\Carbon\Carbon::parse($post->created_at)->format('d M Y')}} <br>  --}}
-                                    {{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}}
-                                </td>
+                            white-space: -pre-wrap;width:200px ">{!! str_limit($post->content,650 , '..')!!}</td>
+                                <td>{{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</td>
                                 <td style="width:50px"> 
                                     <div class="row">
                                         <a href="{{route('blogs', $post->id)}}" class="btn btn-light btn-fw">View</a>

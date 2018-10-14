@@ -10,9 +10,57 @@
     </h2>
 </section>	
 
+<section class="sec-blog bg0 p-t-60 p-b-90">
+    <div class="container">
+        <div class="p-b-66">
+            <h3 class="ltext-105 cl5 txt-center respon1">
+                
+            </h3>
+        </div>
 
+        <div class="row">
+            @foreach($posts as $post)
+                <div class="col-sm-6 col-md-4 p-b-40">
+                    <div class="blog-item">
+                        <div class="hov-img0">
+                            <a href="{{route('blogs', $post->id)}}">
+                                <img style="object-fit: cover;    height: 250px;
+                                width: 100%;" src="{{asset('images/post')}}/{{$post->image}}" alt="IMG-BLOG">
+                            </a>
+                        </div>
+
+                        <div class="p-t-15">
+                            <div class="stext-107 flex-w p-b-14">
+                                
+                                <span>
+                                    <span class="cl4">
+                                        on
+                                    </span>
+
+                                    <span class="cl5">
+                                            {{\Carbon\Carbon::parse($post->created_at)->format('d M Y')}}
+                                    </span>
+                                </span>
+                            </div>
+
+                            <h4 class="p-b-12">
+                                <a href="{{route('blogs', $post->id)}}" class="mtext-101 cl5 hov-cl1 trans-04">
+                                    {{$post->title}}
+                                </a>
+                            </h4>
+
+                            <p class="stext-108 cl6">
+                                {!!str_limit($post->content, '650', '.....')!!}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 <!-- Content page -->
-<section class="bg0 p-t-62 p-b-60">
+{{-- <section class="bg0 p-t-62 p-b-60">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-lg-9 p-b-80">
@@ -99,10 +147,7 @@
                                             {{$post->title}}
                                         </a>
 
-                                        {{-- <span class="stext-116 cl6 p-t-20">
-                                            
-                                            {!! str_limit($post->content, 50, '.....') !!}
-                                        </span> --}}
+                                        
                                     </div>
                                 </li>
 
@@ -115,7 +160,7 @@
         </div>
         
     </div>
-</section>	
+</section>	 --}}
 
 
 @endsection

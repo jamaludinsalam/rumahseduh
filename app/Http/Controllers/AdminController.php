@@ -7,6 +7,7 @@ use App\Menu;
 use App\Post;
 use App\Product;
 use App\User;
+use App\Gallery;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -16,8 +17,9 @@ class AdminController extends Controller
         $products = Product::all();
         $orders = Order::all();
         $menus = Menu::all();
+        $galleries = Gallery::all();
 
-        return view('admin.admin', compact(['products', 'orders', 'menus']));
+        return view('admin.admin', compact(['products', 'orders', 'menus','galleries']));
     }
     
 }

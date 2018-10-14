@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-
+@section('title', 'Menu')
 @section('content')
 
 

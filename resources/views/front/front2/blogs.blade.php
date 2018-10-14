@@ -66,11 +66,11 @@
                         <h4 class="mtext-112 cl5 p-b-33">
                             Other Articles
                         </h4>
-                        @foreach($posts as $post)
+                        @foreach($postss as $post)
                             <ul>
                                 <li class="flex-w flex-t p-b-30">
                                     <a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                                        <img style="width:100px; height:90px" src="{{asset('images/post')}}/{{$post->image}}" alt="PRODUCT">
+                                        <img style="object-fit: cover; width:100px; height:90px" src="{{asset('images/post')}}/{{$post->image}}" alt="PRODUCT">
                                     </a>
 
                                     <div class="size-215 flex-col-t p-t-8">
@@ -78,9 +78,7 @@
                                             {{$post->title}}
                                         </a>
 
-                                        {{-- <span class="stext-116 cl6 p-t-20">
-                                            {!! str_limit($post->content, 50, '.....')!!}
-                                        </span> --}}
+                                        
                                     </div>
                                 </li>
 

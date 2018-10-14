@@ -61,7 +61,7 @@
 								</ul>
 							</li>
 
-							<li class="label1 @yield('active_shop')" data-label1="hot">
+							<li class="@yield('active_shop')" >
 								<a href="{{route('shop')}}">Shop</a>
 							</li>
 
@@ -88,8 +88,9 @@
 						</div>
 							
 						<div class="flex-c-m h-full p-l-18 p-r-25 bor5">
-							<div class="icon-header-item cl5 hov-cl1 trans-04 p-lr-11 icon-header-noti js-show-cart" data-notify="{{Cart::count()}}">
-								<i  class="zmdi zmdi-shopping-cart"></i>
+							<div class="icon-header-item cl5 hov-cl1 trans-04 p-lr-11 icon-header-noti " data-notify="{{Cart::count()}}">
+									<a href="{{route('cart.index')}}"><i  class="zmdi zmdi-shopping-cart"></i></a>
+								{{-- <button type="submit" class="zmdi zmdi-shopping-cart"></button> --}}
 							</div>
 						</div>
 							
@@ -293,60 +294,7 @@
 					</ul>
 				</li>
                 
-                {{-- <li class="t-center">
-                    <!-- Button3 -->
-                    <a href="">
-                        <ul>
-                            <!-- Authentication Links -->
-                            @guest
-                            <a href="{{ route('login') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Login</a>
-                             	<br>
-                            <a href="{{ route('register') }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">Register</a>
-        
-                            @else
-                            <li class="dropdown">
-                                <a href="#" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}" class="flex-c-m stext-101 cl0 size-101 bg2 bor1 hov-btn1 p-lr-15 trans-04 "
-                                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"><button type="submit">
-                                            Logout</button>
-                                        </a>
-        
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                                <br>
-                                <br>
-                            <ul class="sidebar-link w-full">
-                                <li class="p-b-13">
-                                    <a href="index.html" class="stext-102 cl5 hov-cl1 trans-04">
-                                        Home
-                                    </a>
-                                </li>
-                    
-                                <li class="p-b-13">
-                                    <a href="#" class="stext-102 cl5 hov-cl1 trans-04">
-                                        My Order
-                                    </a>
-                                </li>
-                    
-                                <li class="p-b-13">
-                                	<a href="#" class="stext-102 cl5 hov-cl1 trans-04">
-                                        My Account
-                                    </a>
-                                </li>
-							</ul>
-							@endguest
-                        </ul>
-                    </a>
-                </li> --}}
+                
 
 				
 				<div class="sidebar-gallery w-full">
