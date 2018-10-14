@@ -30,9 +30,9 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($products as $product)
+            @foreach($products as $key=>$product)
             <tr>
-              <td style="width:50px">{{$product->id}}</td>
+              <td style="width:50px">{{++$key}}</td>
               <td style="white-space: -o-pre-wrap; 
               word-wrap: break-word;
               white-space: pre-wrap; 
@@ -102,7 +102,7 @@
               word-wrap: break-word;
               white-space: pre-wrap; 
               white-space: -moz-pre-wrap; 
-              white-space: -pre-wrap; width:300px">{!! str_limit($product->description, 300, '.....') !!}</td>
+              white-space: -pre-wrap; width:300px">{!! str_limit($product->description, 200, '.....') !!}</td>
               <td style="width:40px"> 
                 
                 <div class="row">

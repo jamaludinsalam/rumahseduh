@@ -43,21 +43,39 @@ class AddressController extends Controller
     {
         
         $this->validate($request,[
-            'addressline'   => 'required',
-            'city'          => 'required',
-            'province'      => 'required',
-            'postcode'      => 'required|integer',
-            'phone'         => 'required|integer'
+            'address'   => 'required',
+            'receipt'          => 'required',
+            'phone'      => 'required',
+            
 
         ]);
-        Auth::user()->address()->create($request->all());
+        // Auth::user()->address()->create($request->all());
         //Create The Order
-        Order::createOrder();
+        $user = Auth::user();
+        $order = $user->orders()->create([
+            'total'     => Cart::total(),
+            'status'    => 0 ,
+            'image'     => "not.jpg",
+            'receipt'   => request('receipt'),
+            'address'   => request('address'),
+            'phone'     => request('phone')
+        ]);
+
+        $cartItems = Cart::content();
+        foreach ($cartItems as $cartItem)
+        {
+            $order->orderItems()->attach($cartItem->id,[
+                'qty'   => $cartItem->qty,
+                'total'=> $cartItem->qty*$cartItem->price
+            ]);
+            
+        }
+        
 
         
         
         
-        return redirect()->route('invoice');
+        return redirect()->route('invoice',$order->id);
         
     }
 

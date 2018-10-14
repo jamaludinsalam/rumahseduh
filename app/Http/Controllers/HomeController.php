@@ -37,19 +37,18 @@ class HomeController extends Controller
 
     public function beverages()
     {
-        $coffees    = Menu::where('cat_menus_id', 2)->get();
-        $teas       = Menu::where('cat_menus_id', 3)->get();
-        $others     = Menu::where('cat_menus_id', 8)->get();
+        $coffees    = Menu::where('cat_menus_id', 1)->get();
+        $teas       = Menu::where('cat_menus_id', 6)->get();
+        $others     = Menu::where('cat_menus_id', 3)->get();
 
         $cartItems = Cart::content();
         return view('front.front2.beverages', compact(['coffees', 'teas', 'others','cartItems']));
     }
     public function foods()
     {
-        $appetizers = Menu::where('cat_menus_id', 9)->get();
-        $brunchs    = Menu::where('cat_menus_id', 10)->get();
-        $mains      = Menu::where('cat_menus_id', 11)->get();
-        $desserts   = Menu::where('cat_menus_id', 12)->get();
+        
+        $mains      = Menu::where('cat_menus_id', 4)->get();
+        $desserts   = Menu::where('cat_menus_id', 5)->get();
 
         $cartItems = Cart::content();
         return view('front.front2.foods', compact([

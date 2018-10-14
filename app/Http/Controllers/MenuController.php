@@ -16,17 +16,15 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $categories = Category::whereIn('id', [6,7,8,9,10,11,12])->get();
-        $coffees    = Menu::where('cat_menus_id', 2)->get();
-        $teas       = Menu::where('cat_menus_id', 3)->get();
-        $others     = Menu::where('cat_menus_id', 8)->get();
-        $appetizers = Menu::where('cat_menus_id', 9)->get();
-        $brunchs    = Menu::where('cat_menus_id', 10)->get();
-        $mains      = Menu::where('cat_menus_id', 11)->get();
-        $desserts   = Menu::where('cat_menus_id', 12)->get();
+        $categories = Category::whereIn('id', [1,6,3,4,5])->get();
+        $coffees    = Menu::where('cat_menus_id', 1)->get();
+        $teas       = Menu::where('cat_menus_id', 6)->get();
+        $others     = Menu::where('cat_menus_id', 3)->get();
+        
+        $mains      = Menu::where('cat_menus_id', 4)->get();
+        $desserts   = Menu::where('cat_menus_id', 5)->get();
         return view('admin.menuadmin', compact([
-            'categories', 'coffees', 'teas', 'others', 'appetizers',
-            'brunchs', 'mains', 'desserts'
+            'categories', 'coffees', 'teas', 'others',  'mains', 'desserts'
             ]));
     }
 

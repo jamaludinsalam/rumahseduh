@@ -18,6 +18,9 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->string('total');
             $table->integer('status');
+            $table->string('receipt');
+            $table->string('address');
+            $table->string('phone');
             $table->timestamps();
         });
     }

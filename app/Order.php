@@ -8,7 +8,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class Order extends Model
 {
-    protected $fillable=['total', 'status', 'image'];
+    protected $fillable=['total', 'status', 'image', 'receipt', 'address', 'phone'];
 
     public function orderItems()
     {

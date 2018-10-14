@@ -42,27 +42,17 @@
                     <div class="row mb-4">
                         <div class="col-sm-6">
                             
-                            <h6 class="mb-3">From:</h6>
-                            <div>
-                            <strong>Webz Poland</strong>
-                            </div>
-                            <div></div>
-                            <div>71-101 Szczecin, Poland</div>
-                            <div>Email: info@webz.com.pl</div>
-                            <div>Phone: +48 444 666 3333</div>
-                            
-                        </div>
-            
-                        <div class="col-sm-6">
                             <h6 class="mb-3">To:</h6>
                             <div>
-                                <strong>Bob Mart</strong>
+                            <strong>{{$order->receipt}}</strong>
                             </div>
-                            <div>Attn: Daniel Marek</div>
-                            <div>43-190 Mikolow, Poland</div>
-                            <div>Email: marek@daniel.com</div>
-                            <div>Phone: +48 123 456 789</div>
+                            <div></div>
+                            <div>{{$order->address}}</div>
+                            <div>{{$order->phone}}</div>
+                               
                         </div>
+            
+                        
                     </div>
             
                     <div class="table-responsive-sm">
@@ -81,7 +71,11 @@
                                 <tr>
                                     <td class="center">{{++$key}}</td>
                                     <td class="left strong">{{$orderItem->name}}</td>
-                                    <td class="left">{{$orderItem->description}}</td>
+                                    <td style="white-space: -o-pre-wrap; 
+                                    word-wrap: break-word;
+                                    white-space: pre-wrap; 
+                                    white-space: -moz-pre-wrap; 
+                                    white-space: -pre-wrap;width:300px " class="left">{!!$orderItem->description!!}</td>
                                     <td class="center">{{$orderItem->pivot->qty}}</td>
                                     <td class="right">{{$orderItem->pivot->total}}</td>
                                 </tr>

@@ -22,7 +22,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        $categories = Category::whereIn('id', [1,2,3,4,5])->get();
+        $categories = Category::whereIn('id', [7,8])->get();
         $images = ProductImage::where('product_id');
        
         
@@ -37,7 +37,7 @@ class ProductController extends Controller
     public function create()
     {
         $products = Product::all();
-        $categories = Category::whereIn('id', [1,2,3,4,5])->get();
+        $categories = Category::whereIn('id', [7,8])->get();
 
         return view('admin.products.create', compact(['products', 'categories']));
     }

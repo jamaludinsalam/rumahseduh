@@ -25,55 +25,6 @@
         <div class="row">
             <div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
                 <div class="wrap-item-mainmenu p-b-22">
-                    <h3 class="tit-mainmenu tit10 p-b-25">
-                        Appetizer
-                    </h3>
-                    @foreach($appetizers as $appetizer)
-                    <!-- Item mainmenu -->
-                    <div class="item-mainmenu m-b-36">
-                        <div class="flex-w flex-b m-b-3">
-                            <a href="#" class="name-item-mainmenu txt21">
-                                {{$appetizer->name}}
-                            </a>
-
-                            <div class="line-item-mainmenu bg3-pattern"></div>
-                            <div class="price-item-mainmenu txt22">
-                                    @money($appetizer->price)
-                                </div>
-                        </div>
-                        <span class="info-item-mainmenu txt23">
-                            {{$appetizer->description}}
-                        </span>
-                    </div>
-                        @endforeach
-                </div>
-
-                <div class="wrap-item-mainmenu p-b-22">
-                    <h3 class="tit-mainmenu tit10 p-b-25">Brunch</h3>
-                    @foreach($brunchs as $brunch)
-                    <!-- Item mainmenu -->
-                    <div class="item-mainmenu m-b-36">
-                        <div class="flex-w flex-b m-b-3">
-                            <a href="#" class="name-item-mainmenu txt21">
-                                {{$brunch->name}}
-                            </a>
-
-                            <div class="line-item-mainmenu bg3-pattern"></div>
-
-                            <div class="price-item-mainmenu txt22">
-                                @money($brunch->price)
-                            </div>
-                        </div>
-                        <span class="info-item-mainmenu txt23">
-                            {{$brunch->description}}
-                        </span>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <div class="col-md-10 col-lg-6 p-l-35 p-l-15-lg m-l-r-auto">
-                <div class="wrap-item-mainmenu p-b-22">
                     <h3 class="tit-mainmenu tit10 p-b-25">Main Course</h3>
                     @foreach($mains as $main)
                     <!-- Item mainmenu -->
@@ -94,9 +45,10 @@
                         </span>
                     </div>
                     @endforeach
-    
-                </div>
+                </div>   
+            </div>
 
+            <div class="col-md-10 col-lg-6 p-l-35 p-l-15-lg m-l-r-auto">
                 <div class="wrap-item-mainmenu p-b-22">
                     <h3 class="tit-mainmenu tit10 p-b-25">Dessert </h3>
                     @foreach($desserts as $dessert)
