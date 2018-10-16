@@ -10,7 +10,7 @@
 
 
 <div class="header-lunch parallax0 parallax100" style="background-image: url(&quot;front/front2/images/parallax1.jpg&quot;); background-position: center -20.3333px;">
-    <div class="bg1-overlay t-center p-t-170 p-b-165">
+    <div class="bg1-overlay t-center p-t-100 p-b-100">
         <h2 class="tit4 t-center">Foods</h2>
     </div>
 </div>

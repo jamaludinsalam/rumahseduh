@@ -34,7 +34,7 @@
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-                                    Coffee House Cafe, Jl. Kemang Raya, Jakarta Selatan
+							Jl. Bogor Baru No.5B, Tegallega, Central Bogor, Bogor City, West Java 16127
 							</p>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								+62 877 8554 0877
+								+62 813-8049-8006
 							</p>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-                                coffeehousecafe@coffee.com
+                                rumahseduhh@gmail.com
 							</p>
 						</div>
 					</div>

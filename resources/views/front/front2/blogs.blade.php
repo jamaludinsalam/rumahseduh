@@ -69,12 +69,12 @@
                         @foreach($postss as $post)
                             <ul>
                                 <li class="flex-w flex-t p-b-30">
-                                    <a href="#" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
+                                    <a href="{{route('blogs',$post->id)}}" class="wrao-pic-w size-214 hov-ovelay1 m-r-20">
                                         <img style="object-fit: cover; width:100px; height:90px" src="{{asset('images/post')}}/{{$post->image}}" alt="PRODUCT">
                                     </a>
 
                                     <div class="size-215 flex-col-t p-t-8">
-                                        <a href="#" class="stext-116 cl8 hov-cl1 trans-04">
+                                        <a href="{{route('blogs',$post->id)}}" class="stext-116 cl8 hov-cl1 trans-04">
                                             {{$post->title}}
                                         </a>
 

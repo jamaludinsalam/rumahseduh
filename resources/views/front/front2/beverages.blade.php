@@ -8,15 +8,11 @@
 
 
 <div class="header-lunch parallax0 parallax100" style="background-image: url(&quot;front/front2/images/parallax1.jpg&quot;); background-position: center -20.3333px;">
-    <div class="bg1-overlay t-center p-t-170 p-b-165">
+    <div class="bg1-overlay t-center p-t-100 p-b-100">
             <h2 class="tit4 t-center">Beverages</h2>
     </div>
 </div>
-{{-- <div class="sec-banner bg0 p-t-80 p-b-50" style="background-color: #e4dede">
-        <div class="container">
-            <h2 class="tit4 t-center">Beverages</h2>
-        </div>
-</div> --}}
+
     <section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
         <div class="container">
             <div class="row">
@@ -24,7 +20,7 @@
                     <div class="wrap-item-mainmenu p-b-22">
                         
                         <h3 class="tit-mainmenu tit10 p-b-25">
-                            Coffee
+                            Espresso Based
                         </h3>
                         @foreach($coffees as $coffee)
                         <!-- Item mainmenu -->
@@ -51,25 +47,25 @@
 
                     <div class="wrap-item-mainmenu p-b-22">
                         <h3 class="tit-mainmenu tit10 p-b-25">
-                            Tea
+                            Manual Brew
                         </h3>
-                        @foreach($teas as $tea)
+                        @foreach($manualbrews as $manualbrew)
                         <!-- Item mainmenu -->
                         <div class="item-mainmenu m-b-36">
                             <div class="flex-w flex-b m-b-3">
                                 <a href="#" class="name-item-mainmenu txt21">
-                                   {{$tea->name}}
+                                   {{$manualbrew->name}}
                                 </a>
 
                                 <div class="line-item-mainmenu bg3-pattern"></div>
 
                                 <div  class="price-item-mainmenu txt22 ">
-                                   @money($tea->price)
+                                   @money($manualbrew->price)
                                 </div>
                             </div>
 
                             <span class="info-item-mainmenu txt23">
-                                    {{$tea->description}}
+                                    {{$manualbrew->description}}
                             </span>
                         </div>
                         @endforeach

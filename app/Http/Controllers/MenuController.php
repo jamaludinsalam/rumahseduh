@@ -18,13 +18,13 @@ class MenuController extends Controller
     {
         $categories = Category::whereIn('id', [1,6,3,4,5])->get();
         $coffees    = Menu::where('cat_menus_id', 1)->get();
-        $teas       = Menu::where('cat_menus_id', 6)->get();
+        $manualbrews       = Menu::where('cat_menus_id', 6)->get();
         $others     = Menu::where('cat_menus_id', 3)->get();
         
         $mains      = Menu::where('cat_menus_id', 4)->get();
         $desserts   = Menu::where('cat_menus_id', 5)->get();
         return view('admin.menuadmin', compact([
-            'categories', 'coffees', 'teas', 'others',  'mains', 'desserts'
+            'categories', 'coffees', 'manualbrews', 'others',  'mains', 'desserts'
             ]));
     }
 
@@ -60,7 +60,7 @@ class MenuController extends Controller
             'description'   =>  request('description')
         ]);
 
-        return redirect('/menuadmin');
+        return redirect()->route('menu.index');
     }
 
     /**

@@ -4,11 +4,10 @@
 
 
 <div class="row">
-    <div class="col-lg-4 grid-margin stretch-card">
+    <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 >Add Menu</h4>
-                <br>
+                <h4 class="card-title">Add Menu</h4>
                 <button class="btn btn-success btn-fw" data-toggle="modal" data-target="#exampleModal">New Menu
                         <i class="mdi mdi-plus"></i>
                 </button>
@@ -110,7 +109,7 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Tea</h3>
+                    <h3 class="card-title">Manula Brew</h3>
                     <br>
                     <div class="table-responsive">
                         <table class="table table-striped" >
@@ -124,12 +123,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($teas as  $key=>$tea)
+                                @foreach($manualbrews as  $key=>$manualbrew)
                                 <tr>
                                     <td>{{++$key}}</td>
-                                    <td>{{$tea->name}}</td>
-                                    <td>{{$tea->price}}</td>
-                                    <td>{{$tea->description}}</td>
+                                    <td>{{$manualbrew->name}}</td>
+                                    <td>{{$manualbrew->price}}</td>
+                                    <td>{{$manualbrew->description}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

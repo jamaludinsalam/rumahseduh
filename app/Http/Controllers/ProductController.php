@@ -166,7 +166,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $posts = Product::find($product);
+
+        return view('admin.products.edit', compact('products'));
     }
 
     /**
@@ -178,7 +180,34 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $formInput = $request->except('image');
+        
+        $this->validate($request,[
+            'name' => 'required',
+            'category_id' => 'required',
+            'price' => 'required',
+            'description' => 'required'
+        ]);
+
+
+        $image = $request->image;
+        
+        if($image)
+        {
+            $filename = $image->getClientOriginalName();
+            $image->move('images/product', $filename);
+            $formInput['image'] = $filename;
+            
+        }
+        $product->update($formInput,[
+            'name' => request('name'),
+            'category_id' => request('category_id'),
+            'price' => request('price'),
+            'description' => request('description'),
+            
+        ]);
+        Alert::success('Product Edited!', 'Success');
+        return redirect()->route('product.index');  
     }
 
     /**

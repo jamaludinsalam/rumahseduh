@@ -31,18 +31,19 @@ class HomeController extends Controller
     public function index()
     {
         $cartItems = Cart::content();
-        $posts = Post::all();
-        return view('front.front2.home', compact(['cartItems', 'posts']));
+        $posts = Post::latest()->paginate(3);
+        $products = Product::latest()->paginate(4);
+        return view('front.front2.home', compact(['cartItems', 'posts','products']));
     }
 
     public function beverages()
     {
         $coffees    = Menu::where('cat_menus_id', 1)->get();
-        $teas       = Menu::where('cat_menus_id', 6)->get();
         $others     = Menu::where('cat_menus_id', 3)->get();
+        $manualbrews       = Menu::where('cat_menus_id', 6)->get();
 
         $cartItems = Cart::content();
-        return view('front.front2.beverages', compact(['coffees', 'teas', 'others','cartItems']));
+        return view('front.front2.beverages', compact(['coffees', 'others', 'manualbrews','cartItems']));
     }
     public function foods()
     {

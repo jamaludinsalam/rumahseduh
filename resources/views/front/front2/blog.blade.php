@@ -50,7 +50,7 @@
                             </h4>
 
                             <p class="stext-108 cl6">
-                                {!!str_limit($post->content, '650', '.....')!!}
+                                {!!str_limit($post->content, '400', ' ...')!!}
                             </p>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
     </div>
 </section>
 <!-- Content page -->
-{{-- <section class="bg0 p-t-62 p-b-60">
+<!-- {{-- <section class="bg0 p-t-62 p-b-60">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-lg-9 p-b-80">
@@ -160,7 +160,7 @@
         </div>
         
     </div>
-</section>	 --}}
+</section>	 --}} -->
 
 
 @endsection

@@ -2,16 +2,16 @@
 @section('active_gallery', 'active-menu')
 @section('content')
 
-{{-- <div class="header-lunch parallax0 parallax100" style="background-image: url(&quot;front/front2/images/parallax1.jpg&quot;); background-position: center -20.3333px;">
-    <div class="bg1-overlay t-center p-t-170 p-b-165">
+<div class="header-lunch parallax0 parallax100" style="background-image: url(&quot;front/front2/images/parallax1.jpg&quot;); background-position: center -20.3333px;">
+    <div class="bg1-overlay t-center p-t-100 p-b-100">
             <h2 class="tit4 t-center">Gallery</h2>
     </div>
-</div> --}}
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('front/front2/images/bg-02.jpg');">
+</div>
+<!-- <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('front/front2/images/bg-02.jpg');">
     <h2 class="ltext-105 cl0 txt-center">
        Our Gallery
     </h2>
-</section>	
+</section>	 -->
 
 <section class="sec-blog bg0 p-t-60 p-b-90">
 	<div class="container">

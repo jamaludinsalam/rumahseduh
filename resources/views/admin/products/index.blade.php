@@ -102,11 +102,15 @@
               word-wrap: break-word;
               white-space: pre-wrap; 
               white-space: -moz-pre-wrap; 
-              white-space: -pre-wrap; width:300px">{!! str_limit($product->description, 600, '.....') !!}</td>
+              white-space: -pre-wrap; width:300px">{!! str_limit($product->description, 600, ' ...') !!}</td>
               <td style="width:40px"> 
                 
                 <div class="row">
                     <a href="{{route('shops', $product->id)}}" class="btn btn-warning btn-fw">View</a>
+                </div>
+                <br>
+                <div class="row">
+                    <a href="{{route('product.edit', $product->id)}}" class="btn btn-warning btn-fw">Update</a>
                 </div>
                 <br>
                 <div class="row">

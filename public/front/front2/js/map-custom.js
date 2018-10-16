@@ -16,8 +16,8 @@
                 img_pin = 'front/front2/images/icons/pinmap2.png';
             }
             if (data_map_x == null || data_map_y == null) {
-                data_map_x = -6.257799;
-                data_map_y = 106.814891;
+                data_map_x = -6.591935;
+                data_map_y = 106.813905;
             }
             if (scrollwhell == null) {
                 scrollwhell = 5;
@@ -212,9 +212,7 @@
                 longitude = data_map_y;
 
             var locations = [
-                ['<div class="infobox"><h4>Hello</h4><p>Now that you visited our website, how' +
-                ' <br>about checking out our office too?</p></div>'
-                    , latitude, longitude, 2]
+                [ 'Rumah Seduh', -6.591935, 106.813905, 2]
             ];
 
             if (selector_map !== undefined) {

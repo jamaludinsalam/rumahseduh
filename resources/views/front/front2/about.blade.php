@@ -58,16 +58,16 @@
                             
                     </p>
 
-                    <p class="stext-113 cl6 p-b-26">
+                    <!-- <p class="stext-113 cl6 p-b-26">
                             Coffee House Cafe will make its best effort to create a warm place where customers can talk with each other in a comfortable and relaxing environment while enjoying the best brewed coffee and foods in town. We will be in the business of helping our customers to relieve their daily stresses by providing piece of mind through great ambience, convenient location, friendly customer service, and quality products.
-                    </p>
+                    </p> -->
 
 
 
 
 
 
-                    <div class="bor16 p-l-29 p-b-9 m-t-22">
+                    <!-- <div class="bor16 p-l-29 p-b-9 m-t-22">
                         <p class="stext-114 cl6 p-r-40 p-b-11">
                                 Good communication is as stimulating as black coffee, and just as hard.
                         </p>
@@ -75,7 +75,7 @@
                         <span class="stext-111 cl8">
                             - Anne Spencer
                         </span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -122,7 +122,7 @@
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-                                    Coffee House Cafe, Jl. Kemang Raya, Jakarta Selatan
+                            Jl. Bogor Baru No.5B, Tegallega, Central Bogor, Bogor City, West Java 16127
 							</p>
 						</div>
 					</div>
@@ -138,7 +138,7 @@
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								+62 877 8554 0877
+								+62 813-8049-8006
 							</p>
 						</div>
 					</div>
@@ -154,7 +154,7 @@
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-                                coffeehousecafe@coffee.com
+                            rumahseduhh@gmail.com
 							</p>
 						</div>
 					</div>

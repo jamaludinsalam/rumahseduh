@@ -220,7 +220,7 @@
 						<br>
 						<ul class="sidebar-link w-full">
 							<li class="p-b-13">
-								<a href="index.html" class="stext-102 cl5 hov-cl1 trans-04">
+								<a href="{{route('dashboard')}}" class="stext-102 cl5 hov-cl1 trans-04">
 									Dashboard
 								</a>
 							</li>
@@ -383,13 +383,16 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-                            Coffee House Cafe, Jl. Kemang Raya, Jakarta Selatan
+                            Rumah Seduh
+                    </p>
+					<p class="stext-107 cl7 size-201">
+							Jl. Bogor Baru No.5B, Tegallega, Central Bogor, Bogor City, West Java 16127
                     </p>
                     <p class="stext-107 cl7 size-201">
-                            (+62) 877 8554 0877
+                            (+62) 813-8049-8006
                     </p>
                     <p class="stext-107 cl7 size-201">
-                            coffeehousecafe@coffee.com
+                            rumahseduhh@gmail.com
 					</p>
 
 					<div class="p-t-27">
@@ -397,7 +400,7 @@
 							<i class="fa fa-facebook"></i>
 						</a>
 
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+						<a href="https://www.instagram.com/rumah_seduh_/" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-instagram"></i>
 						</a>
 
@@ -413,10 +416,16 @@
                         </h4>
     
                         <p class="stext-107 cl7 size-201">
-                                09:30 AM – 11:00 PM
+                                Monday - Thursday
                         </p>
                         <p class="stext-107 cl7 size-201">
-                                Every Day
+                                10.00 AM - 09.30 PM
+                        </p>
+						<p class="stext-107 cl7 size-201">
+                                Friday - Saturday
+                        </p>
+                        <p class="stext-107 cl7 size-201">
+                                10.00 AM - 10.30 PM
                         </p>
                       
                 </div>
@@ -459,7 +468,7 @@
 			<div class="p-t-40">
 				<p class="stext-107 cl6 txt-center">
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Rumah Seduh Speciality Coffee
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>
