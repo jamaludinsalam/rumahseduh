@@ -14,11 +14,7 @@ use PhpParser\Node\Stmt\Return_;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         $products = Product::all();
@@ -29,11 +25,7 @@ class ProductController extends Controller
         return view('admin.products.index', compact(['products', 'categories']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
         $products = Product::all();
@@ -42,12 +34,7 @@ class ProductController extends Controller
         return view('admin.products.create', compact(['products', 'categories']));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         $this->validate(request(),[
@@ -65,25 +52,13 @@ class ProductController extends Controller
             'image' => "img.jpg"
         ]);
 
-        if($post){
-            alert()->success('Post Created', 'Successfully');
-            return redirect()->route('product.index');
-        }
-
         
-
+        Alert::success('Product Added!', 'Success');
+        return redirect()->route('product.index');
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    
-    
-    
-    
+
     public function uploadImages(Product $product , Request $request)
     {
         $products = Product::find($product);
@@ -108,47 +83,8 @@ class ProductController extends Controller
         $files= $file->images;
         dd($filename[0]->image_path);
 
-
-
-    //    $filename = $request->id;
-    //    $uploaded_image = ProductImage::where('id')
-        // $filename = Product::find($product);
-        // $image=$request->file('file');
-        // $uploaded_image = ProductImage::where('product_id', basename($filename))->first();
- 
-        // if (empty($uploaded_image)) {
-        //     return Response::json(['message' => 'Sorry file does not exist'], 400);
-        // }
- 
-        // $file_path = ("$uploaded_image");
-        
-        // if (file_exists($file_path)) {
-        //     unlink($file_path);
-        // }
- 
-        // if (file_exists($resized_file)) {
-        //     unlink($resized_file);
-        // }
- 
-        // if (!empty($uploaded_image)) {
-        //     $uploaded_image->delete();
-        // }
- 
-        // return Response::json(['message' => 'File successfully delete'], 200);
-        
-
-        // return "image hass been removed";
     }
-    // public function invoice($order)
-    // {
-    //     $orders=Order::where('id', $order)->get();
-    //     // $users=Order::where('id', $order)->get(['user_id'])->first();
-    //     // // $user=$users->user_id;
-    //     // dd($users);
-    //     // $addresses=Address::where('user_id', $users)->get();
-    //     $cartItems = Cart::content();
-    //     return view('front.front2.invoice', compact(['cartItems', 'orders', 'users', 'addresses']));
-    // }
+   
     
      public function show($product)
     {
@@ -158,26 +94,16 @@ class ProductController extends Controller
     
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
+   
+    public function edit($product)
     {
-        $posts = Product::find($product);
+        $products   = Product::find($product);
+        $categories = Category::whereIn('id', [7,8])->get();
 
-        return view('admin.products.edit', compact('products'));
+        return view('admin.products.edit', compact(['products', 'categories']));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, Product $product)
     {
         $formInput = $request->except('image');

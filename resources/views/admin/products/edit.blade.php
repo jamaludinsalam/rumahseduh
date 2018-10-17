@@ -1,5 +1,5 @@
-<!-- @extends('admin.layouts.main')
-@section('title', 'Create Products')
+@extends('admin.layouts.main')
+@section('title', 'Edit Products')
 @section('tinymce')
     @include('admin.layouts.partials.tinymce')
 @endsection
@@ -12,19 +12,19 @@
             <div class="card-body">
                 <h4 class="card-title">New Product</h4>
                 <p class="card-description"></p>
-                    <form action="{{route('product.update', $product->id)}}" method="post">
+                    <form action="{{route('product.update', $products->id)}}" method="post">
                         {{csrf_field()}}
                         {{method_field('PATCH')}}
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" value= "{{$product->name}}"class="form-control" id="name" name="name" placeholder="Name">
+                            <input type="text" value= "{{$products->name}}"class="form-control" id="name" name="name" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for="category">Category</label>
                             <select class="form-control" id="category_id" name="category_id">
-                            <option >Please Select Category</option>
+                            <option disabled >Please Select Category</option>
                             @foreach($categories as $category)
-                            <option value="{{$product->$category->id}}">{{$category->name}}</option>
+                            <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                             </select>
                         </div>
@@ -36,7 +36,7 @@
                         
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea class="form-control" value= "{{$products->description}}"id="description" name="description" rows="3"></textarea>
+                            <textarea class="form-control" value= ""id="description" name="description" rows="3">{{$products->description}}</textarea>
                         </div>
 
                         
@@ -47,4 +47,4 @@
     </div>
 </div>
 
-@endsection -->
+@endsection 

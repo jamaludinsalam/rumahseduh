@@ -21,5 +21,15 @@ class AdminController extends Controller
 
         return view('admin.admin', compact(['products', 'orders', 'menus','galleries']));
     }
+
+    public function create()
+    {
+//
+    }
+
+    public function edit()
+    {
+       //
+    }
     
 }

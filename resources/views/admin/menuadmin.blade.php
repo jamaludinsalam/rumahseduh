@@ -8,63 +8,9 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Add Menu</h4>
-                <button class="btn btn-success btn-fw" data-toggle="modal" data-target="#exampleModal">New Menu
+                <a href="{{route('menu.create')}}"><button class="btn btn-success btn-fw" >New Menu
                         <i class="mdi mdi-plus"></i>
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add New Menu</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <!--============ modal body =========--> 
-                                <div class="col-md-12  grid-margin stretch-card">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title"></h4>
-                                            <p class="card-description"></p>
-                                            
-                                        <form action="{{route('menu.store')}}" method="post">
-                                                {{csrf_field()}}
-                                                <div class="form-group">
-                                                    <label for="name">Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="category">Category</label>
-                                                    <select class="form-control" id="category_id" name="category_id">
-                                                    <option >Please Select Category</option>
-                                                        @foreach($categories as $category)
-                                                            <option value="{{$category->id}}">{{$category->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="price">Price</label>
-                                                    <input type="text" class="form-control" id="price" name="price" placeholder="Price">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="description">Description</label>
-                                                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                                                </div>
-                                                <input type="submit" id="btnmodal" class="btn btn-success mr-2"> 
-                                            </form>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <!--============ /modal body =========--> 
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+                </button></a>
             </div>
         </div>
     </div>
@@ -85,6 +31,7 @@
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Description</th>
+                                <th>Action</th>
 
                             </tr>
                         </thead>
@@ -94,7 +41,24 @@
                                 <td>{{++$key}} </td>
                                 <td>{{$coffee->name}}</td>
                                 <td>{{$coffee->price}}</td>
-                                <td>{{$coffee->description}}</td>
+                                <td>{!!$coffee->description!!}</td>
+                                <td style="width:50px"> 
+                                    
+                                    <div class="row">
+                                        <a href="{{route('menu.edit', $coffee->id)}}" class="btn btn-warning btn-fw">Edit</a>
+                                        
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <form action="{{route('menu.destroy', $coffee->id)}}" method="POST" enctype="multipart/form-data">
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
+                                            <input type="submit" value="Delete" class="btn btn-danger  btn-fw">
+                                        </form>
+                                    </div>
+                                    
+                                    
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -128,7 +92,24 @@
                                     <td>{{++$key}}</td>
                                     <td>{{$manualbrew->name}}</td>
                                     <td>{{$manualbrew->price}}</td>
-                                    <td>{{$manualbrew->description}}</td>
+                                    <td>{!!$manualbrew->description!!}</td>
+                                    <td style="width:50px"> 
+                                        
+                                        <div class="row">
+                                            <a href="{{route('menu.edit', $manualbrew->id)}}" class="btn btn-warning btn-fw">Edit</a>
+                                            
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <form action="{{route('menu.destroy', $manualbrew->id)}}" method="POST" enctype="multipart/form-data">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <input type="submit" value="Delete" class="btn btn-danger  btn-fw">
+                                            </form>
+                                        </div>
+                                        
+                                        
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -162,7 +143,24 @@
                                     <td>{{++$key }}</td>
                                     <td>{{$other->name}}</td>
                                     <td>{{$other->price}}</td>
-                                    <td>{{$other->description}}</td>
+                                    <td>{!!$other->description!!}</td>
+                                    <td style="width:50px"> 
+                                        
+                                        <div class="row">
+                                            <a href="{{route('menu.edit', $other->id)}}" class="btn btn-warning btn-fw">Edit</a>
+                                            
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <form action="{{route('menu.destroy', $other->id)}}" method="POST" enctype="multipart/form-data">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <input type="submit" value="Delete" class="btn btn-danger  btn-fw">
+                                            </form>
+                                        </div>
+                                        
+                                        
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -200,7 +198,24 @@
                                     <td>{{++$key}}</td>
                                     <td>{{$main->name}}</td>
                                     <td>{{$main->price}}</td>
-                                    <td>{{$main->description}}</td>
+                                    <td>{!!$main->description!!}</td>
+                                    <td style="width:50px"> 
+                                        
+                                        <div class="row">
+                                            <a href="{{route('menu.edit', $main->id)}}" class="btn btn-warning btn-fw">Edit</a>
+                                            
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <form action="{{route('menu.destroy', $main->id)}}" method="POST" enctype="multipart/form-data">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <input type="submit" value="Delete" class="btn btn-danger  btn-fw">
+                                            </form>
+                                        </div>
+                                        
+                                        
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -234,7 +249,24 @@
                                     <td>{{++$key}}</td>
                                     <td>{{$dessert->name}}</td>
                                     <td>{{$dessert->price}}</td>
-                                    <td>{{$dessert->description}}</td>
+                                    <td>{!!$dessert->description!!}</td>
+                                    <td style="width:50px"> 
+                                        
+                                        <div class="row">
+                                            <a href="{{route('menu.edit', $dessert->id)}}" class="btn btn-warning btn-fw">Edit</a>
+                                            
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <form action="{{route('menu.destroy', $dessert->id)}}" method="POST" enctype="multipart/form-data">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <input type="submit" value="Delete" class="btn btn-danger  btn-fw">
+                                            </form>
+                                        </div>
+                                        
+                                        
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

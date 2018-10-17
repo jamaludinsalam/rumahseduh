@@ -56,7 +56,7 @@
                                 word-wrap: break-word;
                                 white-space: pre-wrap; 
                                 white-space: -moz-pre-wrap; 
-                            white-space: -pre-wrap;width:200px ">{!! str_limit($post->content,280 , ' ...')!!}</td>
+                            white-space: -pre-wrap;width:200px ">{!! str_limit($post->content,650 , ' ...')!!}</td>
                                 <td>{{\Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</td>
                                 <td style="width:50px"> 
                                     <div class="row">

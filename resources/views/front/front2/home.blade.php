@@ -276,7 +276,7 @@
                                     </h4>
         
                                     <p class="stext-108 cl6">
-                                        {!!str_limit($post->content, '400', '.....')!!}
+                                        {!!str_limit($post->content, '600', '.....')!!}
                                     </p>
                                 </div>
                             </div>

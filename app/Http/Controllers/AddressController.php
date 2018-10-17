@@ -41,7 +41,7 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //Validation 
         $this->validate($request,[
             'address'   => 'required',
             'receipt'          => 'required',
@@ -49,7 +49,7 @@ class AddressController extends Controller
             
 
         ]);
-        // Auth::user()->address()->create($request->all());
+       
         //Create The Order
         $user = Auth::user();
         $order = $user->orders()->create([
@@ -60,7 +60,8 @@ class AddressController extends Controller
             'address'   => request('address'),
             'phone'     => request('phone')
         ]);
-
+        
+        //Create Pivot Order, qty&total
         $cartItems = Cart::content();
         foreach ($cartItems as $cartItem)
         {
@@ -71,10 +72,9 @@ class AddressController extends Controller
             
         }
         
+        //Destroy all Cart after store to Order
+        Cart::destroy($cartItems);
 
-        
-        
-        
         return redirect()->route('invoice',$order->id);
         
     }
@@ -121,6 +121,7 @@ class AddressController extends Controller
      */
     public function destroy(Address $address)
     {
-        //
+        
+        return "Destroyed";
     }
 }

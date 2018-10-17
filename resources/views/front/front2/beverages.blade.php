@@ -39,7 +39,7 @@
                             </div>
 
                             <span class="info-item-mainmenu txt23">
-                                    {{$coffee->description}}
+                                    {!!$coffee->description!!}
                             </span>
                         </div>
                         @endforeach
@@ -65,7 +65,7 @@
                             </div>
 
                             <span class="info-item-mainmenu txt23">
-                                    {{$manualbrew->description}}
+                                    {!!$manualbrew->description!!}
                             </span>
                         </div>
                         @endforeach
@@ -94,7 +94,7 @@
                             </div>
 
                             <span class="info-item-mainmenu txt23">
-                                    {{$other->description}}
+                                    {!!$other->description!!}
                             </span>
                         </div>
                         @endforeach

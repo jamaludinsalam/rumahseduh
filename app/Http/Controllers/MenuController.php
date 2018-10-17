@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Menu;
 use App\Category;
 use App\catMenu;
+use Alert;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -23,8 +24,9 @@ class MenuController extends Controller
         
         $mains      = Menu::where('cat_menus_id', 4)->get();
         $desserts   = Menu::where('cat_menus_id', 5)->get();
+        $menus      = Menu::all();
         return view('admin.menuadmin', compact([
-            'categories', 'coffees', 'manualbrews', 'others',  'mains', 'desserts'
+            'categories', 'coffees', 'manualbrews', 'others',  'mains', 'desserts', 'menus'
             ]));
     }
 
@@ -35,7 +37,9 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::whereIn('id', [1,6,3,4,5])->get();
+
+        return view('admin.menuadmin.create', compact('categories'));
     }
 
     /**
@@ -60,6 +64,7 @@ class MenuController extends Controller
             'description'   =>  request('description')
         ]);
 
+        Alert::success('Added New Menus', 'Success');
         return redirect()->route('menu.index');
     }
 
@@ -80,9 +85,11 @@ class MenuController extends Controller
      * @param  \App\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function edit(Menu $menu)
+    public function edit($menu)
     {
-        //
+        $menus = Menu::find($menu);
+        $categories = Category::whereIn('id', [1,6,3,4,5])->get();
+        return view('admin.menuadmin.edit', compact(['menus', 'categories']));
     }
 
     /**
@@ -94,7 +101,22 @@ class MenuController extends Controller
      */
     public function update(Request $request, Menu $menu)
     {
-        //
+        $this->validate(request(), [
+            'name'          => 'required',
+            'category_id'   =>  'required',
+            'price'         =>  'required',
+            'description'   => 'required'
+        ]);
+        
+        $menu->update([
+            'name'          =>  request('name'),
+            'cat_menus_id'  =>  request('category_id'),
+            'price'         =>  request('price'),
+            'description'   =>  request('description')
+        ]);
+
+        Alert::success('Menu Edited!', 'Success');
+        return redirect()->route('menu.index');
     }
 
     /**
@@ -105,6 +127,8 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
-        //
+        $menu->delete();
+        Alert::success('Menu Deleted!', 'Success');
+        return redirect()->route('menu.index');
     }
 }

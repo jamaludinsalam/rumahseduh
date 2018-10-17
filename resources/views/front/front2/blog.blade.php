@@ -50,7 +50,7 @@
                             </h4>
 
                             <p class="stext-108 cl6">
-                                {!!str_limit($post->content, '400', ' ...')!!}
+                                {!!str_limit($post->content, '650', ' ...')!!}
                             </p>
                         </div>
                     </div>

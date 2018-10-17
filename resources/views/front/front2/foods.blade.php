@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <span class="info-item-mainmenu txt23">
-                            {{$main->Description}}
+                            {!!$main->description!!}
                         </span>
                     </div>
                     @endforeach
@@ -67,7 +67,7 @@
                         </div>
 
                         <span class="info-item-mainmenu txt23">
-                            {{$dessert->description}}
+                            {!!$dessert->description!!}
                         </span>
                     </div>
                     @endforeach

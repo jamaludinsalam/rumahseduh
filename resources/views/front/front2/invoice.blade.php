@@ -10,6 +10,9 @@
             <div class="card-header">
                 Invoice ID :
                 <strong>INV{{$order->id}}</strong> 
+                <br>
+                Order Time :  
+                <strong>{{\Carbon\Carbon::parse($order->created_at)->format('d M Y')}}</strong>
                 <span class="float-right"> <strong>Status:  </strong>
                     <label class=" <?php if($order->status == 0){
                             echo "badge badge-danger";
