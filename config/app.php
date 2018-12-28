@@ -171,6 +171,7 @@ return [
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
