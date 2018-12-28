@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\Fragment\RoutableFragmentRenderer;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('cors');
 
 
 Route::resource('menu', 'MenuController');
@@ -28,11 +28,11 @@ Route::view('/frontt', 'admin.layouts.main');
 Route::view('/admin2', 'admin.admin');
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/beverages', 'HomeController@beverages')->name('beverages');
-Route::get('/foods', 'HomeController@foods')->name('foods');
-Route::get('/about', 'HomeController@about')->name('about');
-Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/', 'HomeController@index')->name('home')->middleware('cors');
+Route::get('/beverages', 'HomeController@beverages')->name('beverages')->middleware('cors');
+Route::get('/foods', 'HomeController@foods')->name('foods')->middleware('cors');
+Route::get('/about', 'HomeController@about')->name('about')->middleware('cors');
+Route::get('/contact', 'HomeController@contact')->name('contact')->middleware('cors');
 Route::get('/gallery', 'HomeController@gallery')->name('gallery');
 Route::get('/gallery/{gallery}', 'HomeController@gallerys')->name('gallerys');
 Route::get('/shop', 'HomeController@shop')->name('shop');
