@@ -9,12 +9,6 @@ use App\ProductImage;
 use Alert;
 
 
-use rizalafani\rajaongkirlaravel\app\Provinsi;
-
-use Steevenz\Rajaongkir;
-
-
-
 class CartController extends Controller
 {
     /**
@@ -30,7 +24,7 @@ class CartController extends Controller
         
 
         $chunk = $products->take(1);
-        return view('front.front2.cart', compact(['cartItems','chunk', 'products','rajaongkir']));
+        return view('front.front2.cart', compact(['cartItems','chunk', 'products']));
     }
 
     /**
