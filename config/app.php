@@ -170,7 +170,6 @@ return [
          */
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-        rizalafani\rajaongkirlaravel\RajaOngkirServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         /*
          * Application Service Providers...
