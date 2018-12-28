@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Route::resource('menu', 'MenuController');
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware('cors');
 
 // Route::get('/category', 'CategoryController@index')->name('admin.category');
 // Route::get('/product', 'ProductController@index')->name('admin.product')->middleware('admin');
