@@ -19,7 +19,7 @@ Route::get('/', function () {
 })->middleware('cors');
 
 
-Route::resource('menu', 'MenuController');
+Route::resource('menu', 'MenuController')->middleware('cors');
 Route::get('/', 'HomeController@index')->name('home')->middleware('cors');
 
 // Route::get('/category', 'CategoryController@index')->name('admin.category');
@@ -33,16 +33,16 @@ Route::get('/beverages', 'HomeController@beverages')->name('beverages')->middlew
 Route::get('/foods', 'HomeController@foods')->name('foods')->middleware('cors');
 Route::get('/about', 'HomeController@about')->name('about')->middleware('cors');
 Route::get('/contact', 'HomeController@contact')->name('contact')->middleware('cors');
-Route::get('/gallery', 'HomeController@gallery')->name('gallery');
-Route::get('/gallery/{gallery}', 'HomeController@gallerys')->name('gallerys');
-Route::get('/shop', 'HomeController@shop')->name('shop');
-Route::get('shops/{product}', 'HomeController@shops')->name('shops');
-Route::get('/blog', 'HomeController@blog')->name('blog');
-Route::get('blogs/{post}', 'HomeController@blogs')->name('blogs');
-Route::resource('/cart', 'CartController');
+Route::get('/gallery', 'HomeController@gallery')->name('gallery')->middleware('cors');
+Route::get('/gallery/{gallery}', 'HomeController@gallerys')->name('gallerys')->middleware('cors');
+Route::get('/shop', 'HomeController@shop')->name('shop')->middleware('cors');
+Route::get('shops/{product}', 'HomeController@shops')->name('shops')->middleware('cors');
+Route::get('/blog', 'HomeController@blog')->name('blog')->middleware('cors');
+Route::get('blogs/{post}', 'HomeController@blogs')->name('blogs')->middleware('cors');
+Route::resource('/cart', 'CartController')->middleware('cors');
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function()
+Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth','cors']], function()
 {
     Route::resource('product', 'ProductController');
     Route::resource('category', 'CategoryController');
@@ -60,7 +60,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth']], function(
  
 });
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth', 'cors'], function(){
     Route::Resource('address', 'AddressController');  
     Route::get('/checkout/address', 'CheckoutController@address')->name('checkout.address');
     Route::post('/checkout/order', 'CheckoutController@order')->name('checkout.order');
