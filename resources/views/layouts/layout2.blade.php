@@ -7,32 +7,32 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/fonts/iconic/css/material-design-iconic-font.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/fonts/iconic/css/material-design-iconic-font.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/fonts/linearicons-v1.0.0/icon-font.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/fonts/linearicons-v1.0.0/icon-font.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/animate/animate.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/animate/animate.css')}}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/css-hamburgers/hamburgers.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/css-hamburgers/hamburgers.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/animsition/css/animsition.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/animsition/css/animsition.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/select2/select2.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/select2/select2.min.css')}}">
 <!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/daterangepicker/daterangepicker.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/daterangepicker/daterangepicker.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/slick/slick.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/slick/slick.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/MagnificPopup/magnific-popup.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/MagnificPopup/magnific-popup.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/css/main.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('public/front/front2/css/main.css')}}">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -487,14 +487,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 <!--===============================================================================================-->	
-	<script src="{{asset('front/front2/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/animsition/js/animsition.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/animsition/js/animsition.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/bootstrap/js/popper.js')}}"></script>
-	<script src="{{asset('front/front2/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/select2/select2.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/select2/select2.min.js')}}"></script>
 	<script>
 		$(".js-select2").each(function(){
 			$(this).select2({
@@ -504,18 +504,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{asset('front/front2/vendor/daterangepicker/daterangepicker.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/daterangepicker/daterangepicker.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/slick/slick.min.js')}}"></script>
-	<script src="{{asset('front/front2/js/slick-custom.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/slick/slick.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/js/slick-custom.js')}}"></script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/parallax100/parallax100.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/parallax100/parallax100.js')}}"></script>
 	<script>
         $('.parallax100').parallax100();
 	</script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/MagnificPopup/jquery.magnific-popup.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/MagnificPopup/jquery.magnific-popup.min.js')}}"></script>
 	<script>
 		$('.gallery-lb').each(function() { // the containers for all your galleries
 			$(this).magnificPopup({
@@ -529,53 +529,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/isotope/isotope.pkgd.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/isotope/isotope.pkgd.min.js')}}"></script>
 <!--===============================================================================================-->
-	{{-- <script src="{{asset('front/front2/vendor/sweetalert/sweetalert.min.js')}}"></script>
-	<script>
-		$('.js-addwish-b2').on('click', function(e){
-			e.preventDefault();
-
-		});
-
-		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "Added to Cart !", "success").then(function(){
-					location.reload();
-					post('/cart/{product}/edit', {product: '1'});
-				}), 
-				
-				
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
-
-		$('.js-addwish-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success").then(function(){
-					location.reload();
-				});
-
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(function(){
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-	</script> --}}
-<!--===============================================================================================-->
-	<script src="{{asset('front/front2/vendor/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+	<script src="{{asset('public/front/front2/vendor/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 	<script>
 		$('.js-pscroll').each(function(){
 			$(this).css('position','relative');
@@ -592,10 +548,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="{{asset('front/front2/js/main.js')}}"></script>
+	<script src="{{asset('public/front/front2/js/main.js')}}"></script>
 	@yield('js')
 	
-	<script src="{{asset('admin/sweetalert/sweetalert.min.js')}}"></script>
+	<script src="{{asset('public/admin/sweetalert/sweetalert.min.js')}}"></script>
 	@include('sweet::alert')	
 
 
