@@ -12,7 +12,6 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "realrashid/sweet-alert": "^1.1",
-        "rizalafani/rajaongkirlaravel": "^1.0",
         "unisharp/laravel-filemanager": "dev-master",
         "uxweb/sweet-alert": "^2.0"
     },
