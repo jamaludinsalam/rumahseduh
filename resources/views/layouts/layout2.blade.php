@@ -32,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/css/main.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/css/main.css')}}">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
