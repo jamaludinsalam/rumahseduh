@@ -113,7 +113,7 @@ class HomeController extends Controller
         // dd($users);
         // $addresses=Address::where('user_id', $users)->get();
         $cartItems = Cart::content();
-        return view('front.front2.invoice', compact(['cartItems', 'orders', 'addresses']));
+        return view('front.front2.invoice', compact(['cartItems', 'orders']));
     }
 
     public function myorder()
