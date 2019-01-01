@@ -9,11 +9,11 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/fonts/iconic/css/material-design-iconic-font.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/fonts/iconic/css/material-design-iconic-font.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/fonts/linearicons-v1.0.0/icon-font.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/fonts/linearicons-v1.0.0/icon-font.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/vendor/animate/animate.css')}}">
 <!--===============================================================================================-->	
@@ -32,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{secure_asset('front/front2/css/main.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('front/front2/css/main.css')}}">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
