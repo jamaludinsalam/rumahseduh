@@ -504,8 +504,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="{{secure_asset('front/front2/vendor/daterangepicker/moment.min.js')}}"></script>
-	<script src="{{secure_asset('front/front2/vendor/daterangepicker/daterangepicker.js')}}"></script>
+
 <!--===============================================================================================-->
 	<script src="{{secure_asset('front/front2/vendor/slick/slick.min.js')}}"></script>
 	<script src="{{secure_asset('front/front2/js/slick-custom.js')}}"></script>
