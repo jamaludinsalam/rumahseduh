@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'db4free.net'),
+            'host' => env('DB_HOST', '159.65.141.158'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'rumahseduh'),
-            'username' => env('DB_USERNAME', 'jamaludinsalam'),
-            'password' => env('DB_PASSWORD', 'm4Ykomputer'),
+            'username' => env('DB_USERNAME', 'admin_punten'),
+            'password' => env('DB_PASSWORD', 'sk4Y$lainlain'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
